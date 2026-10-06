@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PC & Laptop Hardware | Explain Video</title>
+
+<style>
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #050b12;
+
+    color: #ffffff;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MAIN BACKGROUND
+========================================================= */
+
+.page {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0, 184, 255, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(0, 119, 255, 0.15),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #03080e 0%,
+            #071522 48%,
+            #040b13 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CIRCUIT BACKGROUND
+========================================================= */
+
+.circuit-background {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.25;
+}
+
+.circuit-background::before,
+.circuit-background::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            transparent 49%,
+            rgba(75, 205, 255, 0.12) 50%,
+            transparent 51%
+        ),
+        linear-gradient(
+            0deg,
+            transparent 49%,
+            rgba(75, 205, 255, 0.12) 50%,
+            transparent 51%
+        );
+
+    background-size: 70px 70px;
+}
+
+.circuit-background::after {
+    background-size: 140px 140px;
+
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   GLOW ORBS
+========================================================= */
+
+.glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(2px);
+
+    pointer-events: none;
+}
+
+.glow.one {
+    width: 240px;
+    height: 240px;
+
+    left: -100px;
+    top: -80px;
+
+    background: rgba(0, 191, 255, 0.12);
+}
+
+.glow.two {
+    width: 300px;
+    height: 300px;
+
+    right: -130px;
+    bottom: -100px;
+
+    background: rgba(0, 110, 255, 0.10);
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.hardware-card {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1050px, 94vw);
+
+    min-height: 570px;
+
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+
+    border-radius: 26px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(14, 34, 52, 0.96),
+            rgba(5, 15, 25, 0.98)
+        );
+
+    border: 1px solid rgba(86, 215, 255, 0.25);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.55),
+        0 0 55px rgba(0, 170, 255, 0.08);
+}
+
+
+/* =========================================================
+   LEFT HARDWARE VISUAL
+========================================================= */
+
+.visual-panel {
+    position: relative;
+
+    min-height: 570px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 35, 53, 0.95),
+            rgba(4, 16, 27, 0.98)
+        );
+
+    border-right: 1px solid rgba(91, 214, 255, 0.13);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MOTHERBOARD
+========================================================= */
+
+.motherboard {
+    position: relative;
+
+    width: 310px;
+    height: 390px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 47%,
+            rgba(92, 217, 255, 0.10) 48%,
+            transparent 49%
+        ),
+        linear-gradient(
+            0deg,
+            transparent 47%,
+            rgba(92, 217, 255, 0.10) 48%,
+            transparent 49%
+        ),
+        #0a2537;
+
+    background-size: 38px 38px;
+
+    border: 2px solid #3cc8f5;
+
+    box-shadow:
+        0 0 30px rgba(0, 190, 255, 0.15),
+        inset 0 0 35px rgba(0, 180, 255, 0.07);
+
+    transform:
+        perspective(900px)
+        rotateY(-8deg)
+        rotateX(3deg);
+}
+
+
+/* =========================================================
+   MOTHERBOARD CIRCUIT LINES
+========================================================= */
+
+.trace {
+    position: absolute;
+
+    background: #36bce8;
+
+    opacity: 0.45;
+
+    box-shadow: 0 0 7px rgba(54, 188, 232, 0.45);
+}
+
+.trace.h1 {
+    width: 95px;
+    height: 2px;
+
+    top: 83px;
+    left: 38px;
+}
+
+.trace.h2 {
+    width: 2px;
+    height: 95px;
+
+    top: 83px;
+    left: 132px;
+}
+
+.trace.h3 {
+    width: 105px;
+    height: 2px;
+
+    top: 245px;
+    left: 76px;
+}
+
+.trace.h4 {
+    width: 2px;
+    height: 88px;
+
+    top: 210px;
+    right: 75px;
+}
+
+.trace.h5 {
+    width: 80px;
+    height: 2px;
+
+    bottom: 70px;
+    left: 45px;
+}
+
+
+/* =========================================================
+   CPU
+========================================================= */
+
+.cpu {
+    position: absolute;
+
+    width: 108px;
+    height: 108px;
+
+    top: 82px;
+    left: 101px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #172f42,
+            #071722
+        );
+
+    border: 2px solid #68ddff;
+
+    color: #67dcff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 0 20px rgba(71, 214, 255, 0.22);
+}
+
+.cpu::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px solid rgba(103, 220, 255, 0.40);
+
+    border-radius: 7px;
+}
+
+
+/* =========================================================
+   RAM
+========================================================= */
+
+.ram {
+    position: absolute;
+
+    width: 38px;
+    height: 135px;
+
+    right: 45px;
+    top: 72px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #102d40,
+            #1a465d,
+            #102d40
+        );
+
+    border: 1px solid #58d8ff;
+
+    box-shadow:
+        0 0 12px rgba(73, 210, 255, 0.15);
+}
+
+.ram::after {
+    content: "";
+
+    position: absolute;
+
+    left: 7px;
+    right: 7px;
+
+    bottom: -6px;
+
+    height: 6px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #65dcff 0 3px,
+            transparent 3px 7px
+        );
+}
+
+
+/* =========================================================
+   STORAGE
+========================================================= */
+
+.storage-drive {
+    position: absolute;
+
+    width: 115px;
+    height: 58px;
+
+    left: 37px;
+    bottom: 88px;
+
+    border-radius: 7px;
+
+    background: #0b1b2a;
+
+    border: 2px solid #4ccff4;
+}
+
+.storage-drive::before {
+    content: "";
+
+    position: absolute;
+
+    width: 28px;
+    height: 28px;
+
+    left: 41px;
+    top: 12px;
+
+    border-radius: 50%;
+
+    border: 2px solid #54d8ff;
+}
+
+.storage-drive::after {
+    content: "SSD";
+
+    position: absolute;
+
+    right: 9px;
+    top: 21px;
+
+    font-size: 9px;
+
+    color: #68ddff;
+}
+
+
+/* =========================================================
+   GPU
+========================================================= */
+
+.gpu {
+    position: absolute;
+
+    width: 135px;
+    height: 50px;
+
+    right: 33px;
+    bottom: 72px;
+
+    border-radius: 7px;
+
+    background: #0a1b29;
+
+    border: 2px solid #42c6ef;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #60d8ff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   OPTICAL DRIVE
+========================================================= */
+
+.optical {
+    position: absolute;
+
+    width: 130px;
+    height: 48px;
+
+    left: 88px;
+    top: 225px;
+
+    border-radius: 7px;
+
+    background: #0a1926;
+
+    border: 2px solid #47caef;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.optical-disc {
+    width: 26px;
+    height: 26px;
+
+    border-radius: 50%;
+
+    border: 2px solid #68dcff;
+
+    background:
+        radial-gradient(
+            circle,
+            #071522 0 18%,
+            #63dcff 19% 22%,
+            #102d40 23% 100%
+        );
+}
+
+
+/* =========================================================
+   VISUAL LABEL
+========================================================= */
+
+.hardware-label {
+    position: absolute;
+
+    bottom: 30px;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    color: #6edfff;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.content-panel {
+    padding: 58px 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   SMALL LABEL
+========================================================= */
+
+.eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: fit-content;
+
+    margin-bottom: 17px;
+
+    padding: 7px 11px;
+
+    border-radius: 7px;
+
+    background: rgba(70, 205, 255, 0.08);
+
+    border: 1px solid rgba(70, 205, 255, 0.20);
+
+    color: #66d9ff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+}
+
+.eyebrow-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #5bdcff;
+
+    box-shadow:
+        0 0 9px rgba(91, 220, 255, 0.8);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+h1 {
+    margin: 0 0 18px;
+
+    max-width: 600px;
+
+    color: #ffffff;
+
+    font-size: clamp(35px, 5vw, 58px);
+
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+}
+
+h1 span {
+    color: #62dbff;
+}
+
+
+/* =========================================================
+   SHORT DESCRIPTION
+========================================================= */
+
+.description {
+    max-width: 620px;
+
+    color: #a9bccd;
+
+    font-size: 16px;
+
+    line-height: 1.65;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   HARDWARE TOPICS
+========================================================= */
+
+.topic-row {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-bottom: 30px;
+}
+
+.topic {
+    padding: 8px 11px;
+
+    border-radius: 7px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(104, 219, 255, 0.13);
+
+    color: #9db4c7;
+
+    font-size: 11px;
+}
+
+.topic strong {
+    color: #67dcff;
+}
+
+
+/* =========================================================
+   VIDEO BUTTON
+========================================================= */
+
+.video-button {
+    width: fit-content;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 24px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087ea7,
+            #075a7a
+        );
+
+    border: 1px solid #61dcff;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 25px rgba(0, 150, 210, 0.18);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+.video-button:hover {
+    transform: translateY(-3px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #0a99c8,
+            #08769e
+        );
+
+    box-shadow:
+        0 15px 32px rgba(0, 180, 240, 0.25);
+}
+
+.play-icon {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.14);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   VIDEO NOTE
+========================================================= */
+
+.video-note {
+    margin-top: 15px;
+
+    color: #60778a;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 18px;
+
+    z-index: 3;
+
+    text-align: center;
+
+    color: #52697c;
+
+    font-size: 11px;
+
+    letter-spacing: .4px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hardware-card {
+        grid-template-columns: 1fr;
+    }
+
+    .visual-panel {
+        min-height: 430px;
+
+        border-right: 0;
+
+        border-bottom: 1px solid rgba(91, 214, 255, 0.13);
+    }
+
+    .motherboard {
+        transform:
+            perspective(900px)
+            rotateY(-5deg)
+            rotateX(2deg)
+            scale(.82);
+    }
+
+    .content-panel {
+        padding: 40px 35px;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .page {
+        padding: 20px 12px;
+    }
+
+    .hardware-card {
+        width: 100%;
+
+        border-radius: 18px;
+    }
+
+    .visual-panel {
+        min-height: 350px;
+
+        padding: 15px;
+    }
+
+    .motherboard {
+        transform: scale(.67);
+    }
+
+    .content-panel {
+        padding: 32px 24px 38px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .video-button {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .footer {
+        display: none;
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+    <!-- BACKGROUND -->
+    <div class="circuit-background"></div>
+
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+
+
+    <!-- MAIN HARDWARE CARD -->
+
+    <main class="hardware-card">
+
+
+        <!-- =============================================
+             LEFT: PC HARDWARE VISUAL
+        ============================================== -->
+
+        <section class="visual-panel">
+
+            <div class="motherboard">
+
+                <!-- Circuit traces -->
+
+                <div class="trace h1"></div>
+                <div class="trace h2"></div>
+                <div class="trace h3"></div>
+                <div class="trace h4"></div>
+                <div class="trace h5"></div>
+
+
+                <!-- CPU -->
+
+                <div class="cpu">
+                    CPU
+                </div>
+
+
+                <!-- RAM -->
+
+                <div class="ram"></div>
+
+
+                <!-- Optical Drive -->
+
+                <div class="optical">
+
+                    <div class="optical-disc"></div>
+
+                </div>
+
+
+                <!-- Storage -->
+
+                <div class="storage-drive"></div>
+
+
+                <!-- Graphics -->
+
+                <div class="gpu">
+                    GRAPHICS
+                </div>
+
+            </div>
+
+
+            <div class="hardware-label">
+                COMPUTER HARDWARE SYSTEM
+            </div>
+
+        </section>
+
+
+
+        <!-- =============================================
+             RIGHT: VIDEO INFORMATION
+        ============================================== -->
+
+        <section class="content-panel">
+
+
+            <div class="eyebrow">
+
+                <span class="eyebrow-dot"></span>
+
+                EXPLAIN VIDEO
+
+            </div>
+
+
+            <h1>
+
+                PC & Laptop
+                <span>Hardware</span>
+
+            </h1>
+
+
+            <p class="description">
+
+                Learn the essential hardware components of modern
+                computers, including the motherboard, CPU, RAM,
+                storage, optical drives, input and output devices,
+                expansion cards, power, cooling and peripherals.
+
+            </p>
+
+
+            <!-- HARDWARE TOPICS -->
+
+            <div class="topic-row">
+
+                <div class="topic">
+                    <strong>🧩</strong> Motherboard
+                </div>
+
+                <div class="topic">
+                    <strong>🧠</strong> CPU
+                </div>
+
+                <div class="topic">
+                    <strong>⚡</strong> RAM
+                </div>
+
+                <div class="topic">
+                    <strong>💾</strong> Storage
+                </div>
+
+                <div class="topic">
+                    <strong>💿</strong> Optical Drives
+                </div>
+
+                <div class="topic">
+                    <strong>🎮</strong> Expansion
+                </div>
+
+                <div class="topic">
+                    <strong>❄️</strong> Cooling
+                </div>
+
+                <div class="topic">
+                    <strong>🔧</strong> Troubleshooting
+                </div>
+
+            </div>
+
+
+            <!-- OPEN VIDEO BUTTON -->
+
+            <a
+                class="video-button"
+
+                href="https://scrimba.com/explain/guide01s7e6vn2?claim=ts5son9hl9lt2gjn&fullscreen=1&redirectUrl=https%3A%2F%2Fchatgpt.com%2Fc%2F6ac3518b-3364-83ec-a224-f2dc24f1ced8"
+
+                target="_blank"
+
+                rel="noopener noreferrer">
+
+                <span class="play-icon">
+                    ▶
+                </span>
+
+                Open Explain Video
+
+            </a>
+
+
+            <div class="video-note">
+
+                The video opens directly in the Explain Video Generator
+                because the video host does not permit embedded playback.
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        PC & Laptop Hardware • Explain Video
+
+    </footer>
+
+</div>
+
+</body>
+</html>
